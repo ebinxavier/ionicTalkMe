@@ -1,0 +1,16 @@
+<ion-view title="Login" id="page5">
+  <ion-content padding="true" class="has-header">
+    <form id="login-form3" class="list loginForm" name="log" >
+      <label class="item item-input" id="login-input3">
+        <input ng-model="email" name="email" type="email" placeholder="Email" required="">
+
+
+
+      </label>
+<!--        <p>email : {{email}}</p>-->
+      <div class="spacer" style="height: 40px;"></div>
+      <a  ng-show="log.email.$valid" ng-click="login(email)" id="login-button1" class="button button-stable  button-block">Log in</a>
+      <a ui-sref="signup" id="login-button2" class="button button-positive  button-block button-clear">Or create an account</a>
+    </form>
+  </ion-content>
+</ion-view>

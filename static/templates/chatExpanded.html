@@ -1,0 +1,197 @@
+
+<ion-view title="ChatExpanded" id="page10">
+  <ion-content padding="true" class="has-header">
+  	
+
+
+    <style>
+        .messageBox {
+            /*            width: 80%;*/
+            margin-right: 10%;
+            min-height: 20px;
+            background: #f1efef;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 0 0 20px 0;
+        }
+        
+        .messageBoxTo {
+            margin-left: 10%;
+            padding: 20px 0 16px 10px;
+            /*            background: white;*/
+        }
+        
+        .messageBoxFrom {
+            margin-right: 10%;
+            background: #bdbdbc;
+            padding: 20px 0 16px 0;
+        }
+        
+        .chatP {
+            padding: 0px 5px 0px 39px;
+            margin: -5px 10px 0px 10px;
+        }
+        
+        .chatPFrom {
+            padding: 0px 39px 0px 5px;
+            margin: -5px 10px 0px 10px;
+        }
+        
+        .chatbg {
+            background: url(img/brick.jpg);
+        }
+        
+        .bottomStatusDate {
+            color: rgba(0, 0, 0, 0.34);
+            float: left;
+            padding-left: 50px;
+        }
+        
+        .bottomStatusSeen {
+            color: rgba(0, 0, 0, 0.34);
+            float: right;
+            padding-right: 50px;
+        }
+        
+        .bottomStatus {
+            /*            padding-bottom: 20px;*/
+        }
+        
+        .chatImg {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            /*            left: 5px;*/
+            top: 5px;
+            border-radius: 25px;
+        }
+        
+        .chatImgFrom {
+            right: 5px;
+        }
+        
+        .chatImgTo {
+            left: 5px;
+        }
+        
+        .scroll-container {
+            height: 100px;
+            /*            background: url('img/chatbg.jpg') no-repeat*/
+        }
+        
+        .textBox {
+            height: 65px;
+            /*            background: white;*/
+            position: absolute;
+            bottom: 45px;
+            width: 100%;
+        }
+        
+        .textBox input {
+            height: 50px;
+        }
+    </style>
+                    <ion-scroll zooming="true" direction="y" style="width: {{width}}px; height: {{height-150}}px">
+                        <div class="scroll-container">
+                            <div ng-class="{messageBoxFrom:i.from,messageBoxTo:!i.from}" ng-repeat="i in obj" class="messageBox">
+                                <div style="position:relative;">
+                                    <img class="chatImg" src="img/account.png" ng-class="{chatImgTo:i.from,chatImgFrom:!i.from}">
+                                    <p ng-class="{chatPFrom:!i.from}" class="chatP">{{i.msg}}</p>
+                                    <p class="bottomStatus"><span class="bottomStatusDate">{{i.time}}</span><!-- <span class="bottomStatusSeen" ng-show="!i.from">{{i.seen}}</span> --></p>
+                                </div>
+                            </div>
+
+
+</head>
+<style>
+    .floatLeft {
+        float: left;
+        width: 50%;
+    }
+    
+    .floatRight {
+        float: right;
+        width: 50%;
+    }
+
+</style>
+
+<body >
+    <!-- <span>From</span>
+    <input type="text" id="from">
+    <button ng-click="setUSerName()">SetId</button>
+    <br><br>
+    To 
+    &nbsp &nbsp <input type="text" id="to" ng-model="to" ><br><br>
+    Msg:
+    <textarea ng-model="msgg" rows="3" cols="22" id="msg" placeholder="Whats on you mind" ></textarea><br><br>
+    <button ng-click="send(to,msgg)">Send</button>
+    <div ng-repeat="i in msg">
+        <div>
+            <p ng-class="{floatLeft:i.from==userId,floatRight:i.from!=userId}">{{i.msg}} <span>{{i.status}}</span></p>
+
+            <p style="clear:both"></p>
+        </div>
+    </div> -->
+
+
+
+                            <!-- <button class="button" ng-click="scrollTop()">Scroll to Top!</button> -->
+                        </div>              		
+                    </ion-scroll>
+                    		<div class="list" style="padding: 10px 0;">
+							  <div class="item item-input-inset" style="padding: 0px;">
+							    <label class="item-input-wrapper">
+							      <input type="text" placeholder="message" ng-model="commonObj.msg">
+							    </label>
+							    <button class="button button-small" ng-click="send(commonObj.msg)">
+							      SEND
+							    </button>
+							  </div>
+							</div>
+
+                </ion-content>
+            </ion-view>
+        </ion-side-menus>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+<ion-view title="Signup" id="page6">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <ion-content padding="true" class="has-header">
+<style type="text/css">
+      input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+    </style>
+  
+    <form id="signup-form4" class="list" name="signup">
+      <ion-list id="signup-list3">
+       
+
+
+        <label class="item item-input" id="signup-input5">
+          <input type="text" name="name" placeholder="Name" ng-model="name" required>          
+          <p style="color: green" ng-show="signup.name.$valid">
+
+          ✔&nbsp&nbsp
+
+          </p>
+          <span ng-show="signup.name.$touched && signup.name.$invalid">The name is required.
+          </span>
+        </label>
+
+
+        <label class="item item-input" id="signup-input6">
+          <input type="number" placeholder="Phone" ng-minlength="10" ng-maxlength="10"   name="phone"  ng-model="phone" required>
+
+          <p ng-show = "signup.phone.$error.required ||
+                       signup.phone.$error.number">
+                       <!-- Valid phone number is required --></p>
+            <p ng-show = "((signup.phone.$error.minlength ||
+                        signup.phone.$error.maxlength)
+                        && signup.phone.$dirty)">
+                        <!-- Phone number should be 10 digits --></p>
+          <p style="color: green" ng-show="signup.phone.$valid">
+
+          ✔&nbsp&nbsp
+
+          </p>
+          
+        </label>
+
+
+        <label class="item item-input" id="signup-input7">
+          <input type="email" name="email" placeholder="Email" ng-model="email" required>          
+         <p style="color: green" ng-show="signup.email.$valid">
+
+          ✔&nbsp&nbsp
+
+          </p>
+          <!-- <span ng-show="signup.email.$touched && signup.email.$invalid">The email is required.</span> -->
+        </label>
+
+
+      </ion-list>
+      
+      <div  class="spacer" style="width: 300px; height: 53px;"></div>
+      <!-- ng-show="signup.name.$valid && signup.phone.$valid && signup.email.$valid" Thazhe idanam -->
+      <a     ng-click="createAccount(name,email,phone)" id="signup-button3" class="button button-stable  button-block" >Sign up</a>
+    </form>
+  </ion-content>
+</ion-view>
+
+<!-- ng-show="signup.name.$valid && signup.phone.$valid && signup.email.$valid" -->

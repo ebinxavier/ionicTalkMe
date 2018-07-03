@@ -1,0 +1,194 @@
+<ion-view title="ChatExpanded" id="page10">
+  <ion-content padding="true" class="has-header">
+  	
+
+
+
+        <ion-side-menus>
+
+            <ion-view title="Name of Person">
+                <ion-content padding="true" class="chatbg">
+
+
+                    <ion-scroll zooming="true" direction="y" style="width: {{width}}px; height: {{height-150}}px">
+                        <div class="scroll-container">
+
+
+
+                            <div ng-class="{messageBoxFrom:i.from,messageBoxTo:!i.from}" ng-repeat="i in obj" class="messageBox">
+                                <div style="position:relative;">
+                                    <img class="chatImg" src="img/icon.jpg" ng-class="{chatImgTo:i.from,chatImgFrom:!i.from}">
+                                    <p ng-class="{chatPFrom:!i.from}" class="chatP">{{i.msg}}</p>
+                                    <p class="bottomStatus"><span class="bottomStatusDate">{{i.time}}</span><span class="bottomStatusSeen" ng-show="!i.from">{{i.seen}}</span></p>
+                                </div>
+
+                            </div>
+                            <!--                            <button ng-click="alter()">Click me</button>-->
+
+
+
+
+
+
+                            <button class="button" ng-click="scrollTop()">Scroll to Top!</button>
+                            <button id="btn">Emojis</button>
+                            <div style="height:50px"></div>
+
+
+                        </div>
+
+                    </ion-scroll>
+
+                    <!--                    <h1>Ebin</h1>-->
+
+                    <div id="editableArea" onfocus="moveCursor();" class="emojiArea" style="background:white" contenteditable="true">
+                        <span>Editable</span>
+                        <img src="packs/basic/angry.gif" alt="ebin">
+                    </div>
+                    <div ng-controller="toggleButtonCtrl">
+                        <button ng-click="toggleGif()">GIF</button>
+                        <button ng-click="toggleSmiley()">SMILEY</button>
+                        <!--                        <button ng-click="openSmileyKeyboard()">Testing smiley kbrd</button>-->
+
+                    </div>
+
+                    <ion-scroll id="smileyScroll" zooming="true" direction="y" style="width: {{width}}px; height: {{smileyKeyboardOffset}}px">
+
+
+                        <div class="scroll-container">
+                            <div id="emojiContainer">
+                                <div id="emojiKeyboard" ng-controller="gifCtrl">
+                                </div>
+                                <div style="padding-bottom:50px;"></div>
+                            </div>
+
+
+                            <div id="smileyContainer">
+                                <div id="smileyKeyboard" ng-controller="smileyCtrl">
+                                </div>
+                                <div style="padding-bottom:50px;"></div>
+
+                            </div>
+                        </div>
+
+                    </ion-scroll>
+
+
+                </ion-content>
+
+
+                <!--                    smiley code here-->
+
+                <style>
+                    .emojiArea img {
+                        width: 25px;
+                        height: 25px;
+                    }
+                    
+                    .emojiArea {
+                        overflow-y: auto;
+                        height: 40px;
+                        padding: 10px 0 0 10px;
+                        border: 1px solid gray;
+                    }
+                    
+                    .emojiArea span {
+                        vertical-align: middle;
+                    }
+                    
+                    .emojiArea img {
+                        vertical-align: middle;
+                        margin: 0 2px 0 2px;
+                    }
+                    
+                    #emojiKeyboard,
+                    #smileyKeyboard {
+                        width: 100%;
+                        height: 200px;
+                        /*            background: red;*/
+                    }
+                    
+                    #emojiContainer,
+                    #smileyContainer {
+                        background: white;
+                        padding: 10px;
+                    }
+
+                </style>
+                <script>
+
+
+                </script>
+
+
+
+
+
+                <!--
+
+                <div style="position:relative;bottom:0px;z-index:999">
+
+
+                    <div id="editableArea" onfocus="moveCursor();" class="emojiArea" style="background:white" contenteditable="true">
+                        <span>Editable</span>
+                        <img src="packs/basic/angry.gif" alt="ebin">
+                    </div>
+                    <div ng-controller="toggleButtonCtrl">
+                        <button ng-click="toggleGif()">GIF</button>
+                        <button ng-click="toggleSmiley()">SMILEY</button>
+                    </div>
+
+
+                    <ion-scroll id="smileyScroll" zooming="true" direction="y" style="width: {{width}}px; height: {{100}}px">
+
+
+                        <div class="scroll-container">
+                            <div id="emojiContainer">
+                                <div id="emojiKeyboard" ng-controller="gifCtrl">
+                                </div>
+                                <div style="padding-bottom:50px;"></div>
+                            </div>
+
+
+                            <div id="smileyContainer">
+                                <div id="smileyKeyboard" ng-controller="smileyCtrl">
+                                </div>
+                                <div style="padding-bottom:50px;"></div>
+
+                            </div>
+                        </div>
+
+                    </ion-scroll>
+
+
+                </div>
+-->
+
+
+
+
+
+
+
+                <!--                    smiley code ends-->
+
+                <!--
+<div class="textBox">
+    <input type="text">
+</div>
+-->
+
+                <div class="bar bar-footer bar-dark">
+                    <button class="button icon ion-navicon" title="Recent"></button>
+                    <button class="button icon ion-home" title="Groups" ng-click="toggleLeft()"></button>
+                    <button class="button icon ion-star" title="People"></button>
+                    <button class="button icon ion-checkmark-round" title="Setting"></button>
+                </div>
+
+            </ion-view>
+
+        </ion-side-menus>
+   
+
+  </ion-content>
+</ion-view>
