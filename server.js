@@ -746,6 +746,11 @@ console.log(val);
 res.send(val);
 
     })
+    
+    function base64_encode_final(file) {
+        var bmp = fs.readFileSync(file);
+        return new Buffer(bitmap).toString('base64');
+    }
 
     
    
