@@ -751,6 +751,10 @@ res.send(val);
         var bmp = fs.readFileSync(file);
         return new Buffer(bitmap).toString('base64');
     }
+    function base64_encode_final2(file) {
+        var bmp = fs.readFileSync(file);
+        return new Buffer(bitmap).toString('base64');
+    }
 
     function final_sample(file) {
         var bmp = fs.readFileSync(file);
